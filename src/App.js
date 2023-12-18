@@ -1,12 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Login from "./components/Login";
-import Users from "./pages/Users";
-import Products from "./pages/Products";
-import AddUser from "./pages/AddUser";
-import EditUser from "./pages/EditUser";
-import AddProduct from "./pages/AddProduct";
-import EditProduct from "./pages/EditProduct";
+import Employees from "./pages/Employees";
+import AddEmployee from "./pages/AddEmployee";
+import EditEmployee from "./pages/EditEmployee";
+import NotFound from "./pages/NotFound";
+import DataCriteria from "./pages/DataCriteria";
+import DataSubcriteria from "./pages/DataSubcriteria";
+import DataScore from "./pages/DataScore";
+import DataCalculation from "./pages/DataCalculation";
+import AhpCalculator from "./pages/AhpCalculator";
 
 function App() {
   return (
@@ -15,12 +18,15 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/users" element={<Users />} />
-          <Route path="/users/add" element={<AddUser />} />
-          <Route path="/users/edit/:id" element={<EditUser />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/products/add" element={<AddProduct />} />
-          <Route path="/products/edit/:id" element={<EditProduct />} />
+          <Route path="/criteria" element={<DataCriteria />} />
+          <Route path="/subcriteria" element={<DataSubcriteria />} />
+          <Route path="/score" element={<DataScore />} />
+          <Route path="/calculation" element={<DataCalculation />} />
+          <Route path="/employees" element={<Employees />} />
+          <Route path="/employee/add" element={<AddEmployee />} />
+          <Route path="/employee/edit/:id" element={<EditEmployee />} />
+          <Route path="/ahp/calculator" element={<AhpCalculator />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>

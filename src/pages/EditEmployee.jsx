@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import Layout from "./Layout";
-import FormEditUser from "../components/FormEditUser";
+import FormEditEmployee from "../components/FormEditEmployee";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getMe } from "../features/authSlice";
 
-const EditUser = () => {
+const EditEmployee = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { isError, user } = useSelector((state) => state.auth);
+  const { isError } = useSelector((state) => state.auth);
 
   useEffect(() => {
     dispatch(getMe());
@@ -18,15 +18,12 @@ const EditUser = () => {
     if (isError) {
       navigate("/");
     }
-    if (user && user.role !== "admin") {
-      navigate("/dashboard");
-    }
-  }, [isError, user, navigate]);
+  }, [isError, navigate]);
   return (
     <Layout>
-      <FormEditUser />
+      <FormEditEmployee />
     </Layout>
   );
 };
 
-export default EditUser;
+export default EditEmployee;
