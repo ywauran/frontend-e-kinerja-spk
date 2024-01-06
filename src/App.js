@@ -17,7 +17,6 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/criteria" element={<DataCriteria />} />
           <Route path="/subcriteria" element={<DataSubcriteria />} />
           <Route path="/score" element={<DataScore />} />
